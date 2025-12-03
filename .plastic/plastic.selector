@@ -1,0 +1,4 @@
+repository "GameDevTV_01_ObstacleDodge/GameDevTV_01_ObstacleDodge@4673986772334@cloud"
+  path "/"
+    br "/main"
+    co "/main"
