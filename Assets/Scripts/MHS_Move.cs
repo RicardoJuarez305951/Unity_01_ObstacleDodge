@@ -11,17 +11,27 @@ public class MHS_Mover : MonoBehaviour
     {
         xValue = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         zValue = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.Translate(xValue,yValue,zValue);
+    }
+
+    void PrintInstructions()
+    {
+        Debug.Log("Welcome to te Game");
+        Debug.Log("Move with WASD or Arrow Keys");
+        Debug.Log("Welcome to te Game");
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PrintInstructions();
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveCharacter();
-        transform.Translate(xValue,yValue,zValue);        
     }
+
+    
 }
