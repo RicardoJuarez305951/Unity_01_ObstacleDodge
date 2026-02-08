@@ -5,8 +5,12 @@ public class MHS_ObjectHit : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        GetComponent<MeshRenderer>().material.color = Color.black;
-        Debug.Log("Collision");
-        
+        MeshRenderer meshRendererComponent = GetComponent<MeshRenderer>();
+        if (other.gameObject.CompareTag("Player"))
+        {
+            meshRendererComponent.material.color = Color.black;
+            meshRendererComponent.tag = "Hit";
+            Debug.Log("Collision");
+        }
     }
 }

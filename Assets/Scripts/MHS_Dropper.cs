@@ -3,10 +3,15 @@ using UnityEngine;
 public class MHS_Dropper : MonoBehaviour
 {
     [SerializeField]int timeToDrop = 2;
+    MeshRenderer myMeshRenderer;
+    Rigidbody myRigidbody;
     
     void Start()
     {
+        myMeshRenderer = GetComponent<MeshRenderer>();
+        myRigidbody = GetComponent<Rigidbody>();
         
+
     }
 
     void Update()
@@ -14,7 +19,9 @@ public class MHS_Dropper : MonoBehaviour
         
         if(Time.time >= timeToDrop)
         {
-            Debug.Log("DROP");
+            myMeshRenderer.enabled = false;
+            myRigidbody.useGravity = true;
+            // Debug.Log("DROP");
         }
     }
 }
